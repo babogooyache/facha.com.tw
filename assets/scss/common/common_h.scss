@@ -1,0 +1,472 @@
+@import "../mixin/breakpoint";
+
+body {
+    font-family: "Microsoft JhengHei",  arial, sans-serif;
+}
+
+section {
+    position: relative;
+}
+
+section * {
+    position: relative;
+}
+
+.color-red {
+    color: #ce3e3e !important;
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    clear: both;
+}
+
+.clear {
+    clear: both;
+}
+
+.gutters-5 {
+    margin-right: -5px;
+    margin-left: -5px;
+    > [class*='col-'] {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+/* ==============================================================
+*  h usually component
+ ================================================================*/
+.cover {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 9;
+}
+
+.cover-a {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    background: transparent;
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.pic {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+        position: relative;
+    }
+    &.auto {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+
+.is-table {
+    display: none;
+    @media screen and (min-width: 1200px) {
+        display: block !important;
+    }
+}
+
+.is-ipad {
+    display: none;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        display: block !important;
+    }
+}
+
+.is-phone {
+    display: none;
+    @media screen and (max-width: 767px) {
+        display: block !important;
+    }
+}
+
+.visible-xs.inline {
+    @media screen and (max-width: 767px) {
+        display: inline-block !important;
+    }
+}
+
+
+/*centert*/
+.centert {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateX(-50%) translateY(-50%);
+    display: inline-block;
+    position: absolute;
+}
+
+.max-sm-size .centert.no-sm {
+    left: inherit;
+    right: inherit;
+    top: inherit;
+    bottom: inherit;
+    transform: none;
+    -webkit-transform: none;
+    text-align: center;
+    position: relative;
+}
+
+//need projct's H
+.centert04 {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.row.gutter-5 {
+    margin-right: -5px;
+    margin-left: -5px;
+    > [class*="col-"] {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+}
+
+
+/* ==============================================================
+* animation-delay
+ ================================================================*/
+
+.d1 {
+  animation-delay:0.1s;
+}
+
+.d2 {
+  animation-delay:0.2s;
+}
+
+.d3 {
+  animation-delay:0.3s;
+}
+
+.d4 {
+  animation-delay:0.4s;
+}
+
+
+.d5 {
+  animation-delay:0.5s;
+}
+
+.d6 {
+  animation-delay:0.6s;
+}
+
+.d7 {
+  animation-delay:0.7s;
+}
+
+.d8 {
+  animation-delay:0.8s;
+}
+
+.d9 {
+  animation-delay:0.9s;
+}
+
+.d10 {
+  animation-delay:1.0s;
+}
+
+.d12 {
+  animation-delay:1.2s;
+}
+
+.d14 {
+  animation-delay:1.4s;
+}
+
+/* ==============================================================
+* animation-duration
+ ================================================================*/
+
+.d1s {
+     animation-duration: 1s;
+}
+
+.d15s {
+     animation-duration: 1.5s;
+}
+
+.d2s {
+     animation-duration: 2s;
+}
+
+
+/* ==============================================================
+* animation-delay
+ ================================================================*/
+
+.z0 {
+    z-index: 0;
+}
+
+.z1 {
+    z-index: 1 !important;
+}
+
+.z2 {
+    z-index: 2 !important;
+}
+
+/* ==============================================================
+* width
+ ================================================================*/
+.w100 {
+    width: 100% !important;
+}
+
+
+/* ==============================================================
+* margin
+ ================================================================*/
+//  margin-top
+.mt0 {
+    margin-top: 0;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+
+.mt20 {
+    margin-top: 20px;
+}
+
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt35 {
+    margin-top: 35px;
+}
+
+//  margin-bottom
+.mb0 {
+    margin-bottom: 0px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+.mb100 {
+    margin-bottom: 100px;
+}
+
+// margin-right
+.mr10 {
+    margin-right: 10px;
+}
+
+@include x1200 {
+    .mb-lg-30 {
+        margin-bottom: 30px;
+    }
+}
+
+@include x768 {
+    //  margin-top
+    .mt-xs-15 {
+        margin-top: 15px;
+    }
+
+    .mt-xs-30 {
+        margin-top: 30px;
+    }
+
+    // margin-bottom
+    .mb-xs-0 {
+        margin-bottom: 0 !important;
+    }
+    .mb-xs-5 {
+        margin-bottom: 5px !important;
+    }
+
+    .mb-xs-10 {
+        margin-bottom: 10px !important;
+    }
+    .mb-xs-20 {
+        margin-bottom: 20px !important;
+    }
+    .mb-xs-30 {
+        margin-bottom: 30px !important;
+    }
+
+    // margin-left
+    .ml-xs-10 {
+        margin-left: 10px !important;
+    }
+    .ml-xs-15 {
+        margin-left: 15px !important;
+    }
+
+    // margin-right
+    .mr-xs-0 {
+        margin-right: 0 !important;
+    }
+}
+
+
+/* ==============================================================
+* padding
+ ================================================================*/
+
+.pb5 {
+    padding-bottom: 5px;
+}
+
+.pb10 {
+    padding-bottom: 10px !important;
+}
+
+.pl10 {
+    padding-left: 10px !important;
+}
+
+
+/* ==============================================================
+* font
+ ================================================================*/
+
+.fz12 {
+    font-size: 12px !important;
+}
+
+.fz13 {
+    font-size: 13px !important;
+}
+
+.fz14 {
+    font-size: 14px !important;
+}
+
+.fz15 {
+    font-size: 15px !important;
+}
+
+.fz16 {
+    font-size: 16px !important;
+}
+
+.fz17 {
+    font-size: 17px !important;
+}
+
+.fz18 {
+    font-size: 18px !important;
+}
+
+.fz22  {
+    font-size: 22px !important;
+}
+
+.fz30  {
+    font-size: 30px !important;
+}
+
+@include x768 {
+    .fz-xs-14 {
+        font-size: 14px !important;
+    }
+}
+
+.tc {
+    text-align: center;
+}
+
+@include x768 {
+    .tc-xs {
+        text-align: center !important;
+    }
+    .tl-xs {
+        text-align: left !important;
+    }
+}
+
+
+.fw-b {
+    font-weight: bold;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+/* ==============================================================
+* opacity
+ ================================================================*/
+.opacity-5 {
+    opacity: 0.5;
+}

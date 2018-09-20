@@ -1,0 +1,46 @@
+
+footer {
+    background: #272435
+}
+
+.footer-logo {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    background: url('../../images/footer/footerbg.png') center center no-repeat;
+    background-size: 648px 70px;
+    border-bottom: 1px solid #555059
+}
+
+.scroll-top {
+    position: absolute;
+    width: 78px;
+    height: 36px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    background: url('../../images/footer//top.png') center center no-repeat;
+    background-size: contain;
+    z-index: 2
+}
+
+.copyright p {
+    display: inline;
+    margin: 0
+}
+
+.copyright,
+.copyright a {
+    padding: 10px 0;
+    color: #b5aea5;
+    font-size: 13px;
+    letter-spacing: 1px
+}
+
+.copyright a:hover {
+    color: #fff
+}

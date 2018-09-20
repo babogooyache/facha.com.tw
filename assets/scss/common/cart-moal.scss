@@ -1,0 +1,342 @@
+@import "../mixin/_breakpoint.scss";
+@import "../mixin/_variable_h.scss";
+
+/* ===========================================================
+    cart-modal
+=============================================================*/
+.cover-a {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    background: transparent;
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.pic {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+        position: relative;
+    }
+    &.auto {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.cart-modal-wrapper   {
+    span {
+        display: inline-block;
+    }
+    * {
+        position: relative;
+    }
+}
+
+// count
+.count-wrapper {
+    width: 100%;
+    & > * {
+        display: block;
+        float: left;
+    }
+    input {
+        width: calc(100% - 55px);
+        box-shadow: none;
+        border: 1px solid #cac7cf;
+        font-size: 13px;
+        color: #958f9f;
+        border-radius: 0;
+        padding: 4px 10px;
+        text-align: center;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .num-dec {
+        $wh: 25px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 18px;
+        color: #505050;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+//.cart-icon-close
+$closeWH: 18px;
+.cart-icon-close {
+    font-size: 12px;
+    color: #373737;
+    $wh: 18px;
+    @include circle($closeWH,$closeWH, #edecef) ;
+    line-height: $wh;
+    position: absolute;
+    &:before {
+        display: inline-block;
+        transform: scale(0.7);
+        top: 3px;
+        position: relative;
+    }
+}
+
+
+/* ============  color  ============*/
+$purple: #958f9f;
+$purple02: #574d68;
+
+
+/* ============  modal set  ============*/
+.cart-modal-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(#fff, 0.85);
+    z-index: 11000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in-out;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        .cart-modal {
+            margin-top: 0;
+            opacity: 1;
+        }
+    }
+}
+
+.cart-modal {
+    max-width: 90%;
+    width: 770px;
+    max-height: 90%;
+    height: auto;
+    padding: 25px 25px;
+    border: 5px solid #ecebed;
+    background: #fff;
+
+    display: block;
+    left: 50%;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    @include i768x992 {
+        width: 450px;
+    }
+    @include x768 {
+        width: 90%;
+        padding: 10px 25px 10px 25px;
+        .content {
+            overflow-y: auto;
+            max-height: 52vh;
+        }
+    }
+    @include x390 {
+        .content {
+            max-height: 48vh;
+        }
+    }
+}
+
+/* ============  style  ============*/
+
+.cart-header {
+    width: 100%;
+    padding: 10px 0 11px 0;
+    border-bottom: 1px solid #cfcfcf;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    .cart-num {
+        font-size: 13px;
+        color: rgba(#858290,0.8);
+        float: left;
+        .num {
+            color: rgba(#858290,0.5);
+            margin-left: 5px;
+        }
+    }
+    .cart-model-close {
+        float: right;
+        .icon {
+            font-size: 15px;
+            color: #373737;
+            margin-right: 10px;
+
+            top: 1px;
+
+        }
+        .text {
+            font-size: 16px;
+            color: #505050;
+            top: -1px;
+        }
+        @include x768 {
+
+        }
+    }
+}
+
+
+.cart-pic {
+    img {
+        width: 130px;
+        position: absolute;
+        top: 0;
+        left: 10px;
+    }
+    @include i768 {
+        width: 130px;
+        height: 120px;
+    }
+    @include x768 {
+        width: 100px;
+        height: 100px;
+        float: left;
+        img {
+            width: 100%;
+            top: 5px;
+        }
+    }
+}
+
+.cart-title {
+    color: #858290 !important;
+    font-family: "mod20", "Microsoft JhengHei", sans-serif;
+    &:hover {
+        text-decoration: underline !important;
+    }
+}
+
+.cart-box {
+    width: 130px;
+    height: auto;
+    display: inline-block;
+    margin: 15px;
+    .cart-icon-close {
+        $wh: 18px;
+        top: - $closeWH;
+        right: - $closeWH;
+    }
+    .cart-title {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    .cart-price {
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        .text {
+            font-size: 13px;
+            color: $purple;
+        }
+        .num {
+            font-size: 22px;
+            color: #373737;
+        }
+    }
+    @include i768 {
+        .cart-icon-close {
+            $wh: 18px;
+            top: - $wh;
+            right: - $wh;
+        }
+    }
+    @include x768 {
+        width: 100%;
+        margin: 5px 0;
+        .cart-icon-close {
+            right: 0;
+            top:50%;
+            transform:translateY(-50%);
+        }
+        .cart-data {
+            width: calc( 100% - 130px);
+            float: left;
+        }
+        .cart-price {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.cart-footer {
+    border-top: 1px dashed #c3c2c4;
+    p.total {
+        text-transform: uppercase;
+        display: inline-block;
+        float: left;
+        .text {
+            font-size: 13px;
+            color: rgba(#858290,0.8);
+            top: 2px;
+        }
+        .num {
+            font-size: 30px;
+            color: #373737;
+            margin-right: 3px;
+            margin-left: 3px;
+            top: 7px;
+        }
+    }
+    .btn-button.white-btn {
+        width: 125px;
+        font-size: 12px;
+        color: $purple;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #fff;
+        padding: 9px 15px;
+        float: right;
+        margin-top: 10px;
+        box-shadow: none;
+        border: 1px solid #c4c4c5;
+        .icon {
+            $wh: 13px;
+            @include circle($wh, $wh, #bfbcc5, inline-block  ) ;
+            margin-left: 3px;
+
+            font-size: 12px;
+            color: #fff;
+            position: relative;
+            top: 0;
+            &:before {
+                transform: scale(0.7);
+                top: 1px;
+                left: 1px;
+                display: block;
+                position: relative;
+            }
+        }
+        &:hover {
+            background-color: #edecef;
+        }
+    }
+    @include x768 {
+        margin-bottom: 10px;
+        p.total , .btn-button.white-btn {
+            width: 100%;
+        }
+        p.total {
+            margin-bottom: 0;
+        }
+    }
+}
